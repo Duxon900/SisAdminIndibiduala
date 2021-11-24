@@ -1,0 +1,18 @@
+FROM blobcity/java8-ubuntu
+
+ENV DB_VER=1.7.10-alpha
+
+RUN cd / && mkdir data
+
+RUN apt-get update
+RUN apt-get install dmidecode
+
+
+ENV BLOBCITY_DATA=/data/
+
+WORKDIR /opt/blobcity-db-$DB_VER
+
+CMD ["bin/blobcity.sh"]
+
+EXPOSE 10111
+EXPOSE 10113
