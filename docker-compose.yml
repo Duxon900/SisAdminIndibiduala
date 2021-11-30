@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+        servidor-blobcity:
+                container_name: blobcity
+                image: store/blobcity/db:1.7.10
+                ports:
+                        - "10113:10113"
+                        - "10111:10111"
+                volumes:
+                        - "./partekatu:/data"                
+
+        pythonuser:
+                container_name: elbitxo
+                build: ./dockerPythonUser/
+                volumes:
+                        - "./partekatu:/datuak"
+                links:
+                        - "servidor-blobcity:servidor-blobcity"

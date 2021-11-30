@@ -1,0 +1,1 @@
+{"meta":{"replication-type":"distributed","replication-factor":0,"type":"on-disk","flexible-schema":false},"cols":{"_id":{"auto-define":"uuid","name":"_id","index":"unique","type":{"length":-1,"type":"STRING"}},"value":{"auto-define":"none","name":"value","index":"none","type":{"length":255,"type":"VARCHAR"}}},"primary":"_id"}
