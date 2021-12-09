@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: nire-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: konexioa
+  template:
+    metadata:
+      labels:
+        component: konexioa
+    spec:
+      containers:
+        - name: blobcity
+          image: "store/blobcity/db:1.7.10"
+          ports:
+            - containerPort: 10113
+            - containerPort: 10111
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+          volumeMounts:
+            - name: vol
+              mountPath: /data
+  volumes:
+  - name: vol
+    hostPath:
+      path: /datuak
+      type: Directory
