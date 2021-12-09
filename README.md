@@ -1,4 +1,10 @@
 # SisAdminIndibiduala
+Hasteko partekatu karpeta sortu beharko da, git-ek duen funtzionamenduagatik ez du usten fitxero huts bat igotzea
+```bash
+mkdir partekatu
+```
+
+
 Docker
 ```bash
 docker-compose up
